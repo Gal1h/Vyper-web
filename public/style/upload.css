@@ -1,0 +1,6 @@
+tr,th,td {
+    border: 1px solid #000000;
+}
+table,form {
+    margin: 10px;
+}

@@ -1,0 +1,13 @@
+@media screen and (min-width: 455px) {
+  .burger {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 455px) {
+    .nav-menu {
+        display: none
+    }
+    .video div {
+    }
+}

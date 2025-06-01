@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #081525;
+}
+
+.navbar {
+    display: flex;
+    background: linear-gradient(to right, #1D5683, #153C5F);
+    color: white;
+    text-align: right;
+    height: 50px;
+}
+.nav-menu{
+    padding-top: 5px;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav-menu li a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-title {
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-family: 'watcher-bold';
+    text-align: left;
+    padding-left: 20px;
+}
+.burger {
+    float:right;
+
+    padding: 0px 15px 10px 0px;
+}
+
+.line {
+    width: 30px;
+    height: 5px;
+    background-color: #ffffff;
+    margin-bottom: 5px;
+    border-radius: 10px;
+}
+
+/* ------------ */
+
+.sidebar-menu {
+    background:linear-gradient(to bottom, #589dd3, #194049);
+    height: 100vh;
+    padding-top: 20px;
+    width: 100%;
+    display: none;
+}
+.sidebar-menu h2 {
+    text-align: center;
+    font-family: oswald;
+    font-size: 50px;
+    color: black;
+}
+.modeswitch {
+    display: flex;
+    justify-content: center;
+}
+
+.switch {
+    width: 50px;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 5px 0px 5px;
+    align-items: center;
+    background-color:white;
+    border-radius: 10px;
+}
+.switch-circle {
+    width: 15px;
+    height: 15px;
+    background-color: #3963c5;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+/* content */
+.video {
+    width: 240px;
+    height: 170px;
+}
+
+.video div iframe {
+    background-color: #182a31;
+    border-radius: 10px;
+}
+
+.video div div {
+    margin: 0px;
+    padding: 0px;
+}
+.tripledot {
+    text-decoration: none;
+    color: white;
+}
+
+.video div div h4 {
+    padding: 10px 2px 0px 2px;
+    font-size: medium;
+}
+
+.video div {
+    color: white;
+    border-radius: 10px;
+    margin-left: 1px;
+}
+
+/* video dropdown */
+.video-dropdown {
+    position: absolute;
+    text-align: left;
+    list-style: none;
+    background-color: rgba(32, 32, 32, 0.589);
+    display: none;
+}
+.tripledot:hover .video-dropdown{
+    display: block;
+}
