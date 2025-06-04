@@ -1,13 +1,16 @@
-@media screen and (min-width: 455px) {
+@media screen and (min-width: 620px) {
   .burger {
     display: none;
   }
 }
 
-@media screen and (max-width: 455px) {
-    .nav-menu {
-        display: none
-    }
-    .video div {
-    }
+@media screen and (max-width: 620px) {
+  .nav-menu {
+    display: none
+  }
+}
+@media screen and (max-width: 175px) {
+  .input-search {
+    width: 150px;
+  }
 }

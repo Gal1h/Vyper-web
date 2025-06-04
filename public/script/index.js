@@ -32,6 +32,29 @@ document.getElementById("switch").onclick = function()
     
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const tripledots = document.querySelectorAll(".tripledot");
+
+    tripledots.forEach(dot => {
+        dot.addEventListener("click", (e) => {
+            e.preventDefault();
+            const dropdown = dot.nextElementSibling;
+            dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex";
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".tripledot-container")) {
+            document.querySelectorAll(".video-dropdown").forEach(dropdown => {
+                dropdown.style.display = "none";
+            });
+        }
+    });
+});
+
+
+
 fetch('../../server.js')
     .then(response => response.clone())
     .then(data => {

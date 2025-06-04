@@ -33,6 +33,30 @@ body {
     text-align: left;
     padding-left: 20px;
 }
+
+.search-bar {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scale: 0.8;
+    width: 300px;
+    float: right;
+    /* background-color: rgb(255, 255, 255); */
+    align-self: center;
+    justify-content: space-between;
+}
+.search-submit {
+    box-shadow: none;
+    border: none;
+    background:url(../img/search.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 15px;
+    background-size: 130%;
+    filter: invert(100%);
+}
+
 .burger {
     float:right;
 
@@ -117,13 +141,42 @@ body {
 }
 
 /* video dropdown */
-.video-dropdown {
-    position: absolute;
-    text-align: left;
-    list-style: none;
-    background-color: rgba(32, 32, 32, 0.589);
-    display: none;
+.tripledot-container {
+    position: relative;
+    display: inline-block;
+    scale: 0.9;
+    
 }
-.tripledot:hover .video-dropdown{
+
+.tripledot {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.video-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: rgb(221, 221, 221);
+    z-index: 1000;
+    padding: 10px;
+}
+
+.video-dropdown a,
+.video-dropdown button {
     display: block;
+    text-decoration: none;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-radius: 0px,0px,10px,10px;
+}
+
+.video-dropdown a:hover,
+.video-dropdown button:hover {
+    background-color: #8f8f8f;
+    border-radius: 10px;
 }

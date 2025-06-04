@@ -23,6 +23,12 @@
                 <td><%= asset.judul %></td>
                 <td><%= asset.size %></td>
                 <td><%= asset.id %></td>
+                <td>
+                    <form action="/deleteMedia" method="post">
+                        <input type="hidden" name="delId" value="<%= asset.id %>">
+                        <button type="submit" class=" bg-danger">Delete</button>
+                    </form>
+                </td>
             </tr>
             <% } %>
         </table>
