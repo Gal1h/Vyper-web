@@ -85,19 +85,24 @@ DB.connect((err) => {
 })
 // Download file endpoint
 
-    app.post("/download", (req, res) => {
-        const selectSumber = `SELECT sumber FROM assets WHERE id = ${req.body.idVideo};`
-        DB.query(selectSumber, (err, result) => {
-            if (err) throw err;
-            console.log(result[0].sumber)
-            res.download(path.join(__dirname, "public", result[0].sumber), (err) => {
-                if (err) {
-                    console.error("Error downloading file:", err);
-                    res.status(500).send("Error downloading file");
-                }
-            });
+
+
+app.post("/download", (req, res) => {
+    const selectSumber = `SELECT sumber FROM assets WHERE id = ${req.body.idVideo};`
+    DB.query(selectSumber, (err, result) => {
+        if (err) throw err;
+        console.log(result[0].sumber);
+
+        const filePath = path.join(__dirname, "public", result[0].sumber);
+        res.setHeader("Content-Disposition", "inline"); // Set header to inline
+        res.download(filePath, (err) => {
+            if (err) {
+                console.error("Error downloading file:", err);
+                res.status(500).send("Error downloading file");
+            }
         });
     });
+});
 
 
 
