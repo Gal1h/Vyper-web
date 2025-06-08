@@ -55,7 +55,10 @@
             <% for (let asset of assets){%>
             <div class="col-12 video">
                 <div class="row">
-                    <iframe width="240" height="110" src="<%=asset.sumber%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <video width="240" height="110" controls>
+                        <source src="<%=asset.sumber%>" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                     <div class="row">
                         <h4 class="col-11"><%=asset.judul%></h4>
                         <div class="tripledot-container col-1">
