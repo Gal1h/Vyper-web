@@ -1,20 +1,13 @@
 
 
-document.getElementById("burger").onclick = function() 
-{
-    let sidebarMenu = document.getElementById("sidebar-menu");
-    
-    if (sidebarMenu.style.display == "none") {
-        sidebarMenu.style.display = "block";
-    }
-    else {
-        sidebarMenu.style.display = "none";
-    }
-}
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const tripledots = document.querySelectorAll(".tripledot");
+    const sidebarMenu = document.getElementById("sidebar-menu");
+    const sidebarToggle = document.getElementById("burger");
 
+    // triple dot functionality
     tripledots.forEach(dot => {
         dot.addEventListener("click", (e) => {
             e.preventDefault();
@@ -23,6 +16,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    // Sidebar toggle functionality 
+    if (sidebarToggle && sidebarMenu) {
+        sidebarToggle.addEventListener("click", (e) => {
+            e.preventDefault();
+            sidebarMenu.style.display = sidebarMenu.style.display === "block" ? "none" : "block";
+        });
+    }
     // Close dropdown when clicking outside
     document.addEventListener("click", (e) => {
         if (!e.target.closest(".tripledot-container")) {
@@ -34,6 +34,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+
+// --------
 
 fetch('../../server.js')
     .then(response => response.clone())

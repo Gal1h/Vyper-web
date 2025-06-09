@@ -13,7 +13,10 @@ body {
     background: linear-gradient(to right, #1D5683, #153C5F);
     color: white;
     text-align: right;
+    z-index: 5;
     height: 50px;
+    position: sticky;
+    top: 0;
 }
 .nav-menu{
     padding-top: 5px;
@@ -74,48 +77,35 @@ body {
 /* ------------ */
 
 .sidebar-menu {
-    background:linear-gradient(to bottom, #589dd3, #194049);
+    background: rgba(0, 0, 0, 0.555);
     height: 100vh;
     padding-top: 20px;
     width: 100%;
     display: none;
+    position: sticky;
+    z-index: 2;
 }
-.sidebar-menu h2 {
+.sidebar-menu h2{
     text-align: center;
     font-family: oswald;
     font-size: 50px;
-    color: black;
+    color: rgb(255, 255, 255);
 }
-.modeswitch {
-    display: flex;
-    justify-content: center;
+.nav-item {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.switch {
-    width: 50px;
-    height: 20px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0px 5px 0px 5px;
-    align-items: center;
-    background-color:white;
-    border-radius: 10px;
-}
-.switch-circle {
-    width: 15px;
-    height: 15px;
-    background-color: #3963c5;
-    border-radius: 50%;
-    transition: 0.5s;
-}
 
 /* content */
 .video {
     width: 240px;
-    height: 170px;
+    height: 200px;
+    align-self: self-start;
 }
 
-.video div iframe {
+.video div video {
     background-color: #182a31;
     border-radius: 10px;
 }
@@ -130,8 +120,15 @@ body {
 }
 
 .video div div h4 {
-    padding: 10px 2px 0px 2px;
+    padding: 5px 2px 0px 2px;
     font-size: medium;
+    margin: 0px;
+}
+.video div p {
+    padding: 0px 2px 5px 2px;
+    font-size: small;
+    color: #ececec;
+    margin: 0px;
 }
 
 .video div {

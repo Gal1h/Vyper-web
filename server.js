@@ -90,9 +90,7 @@ DB.connect((err) => {
 
 
     app.post("/download", (req, res) => {
-        const selectSumber = `CHECK TABLE assets;
-                            REPAIR TABLE assets;
-                            SELECT sumber FROM assets WHERE id = ${req.body.idVideo};`
+        const selectSumber = `SELECT sumber FROM assets WHERE id = ${req.body.idVideo};`
         DB.query(selectSumber, (err, result) => {
             if (err) throw err;
             console.log(result[0].sumber)
@@ -153,7 +151,7 @@ app.post("/deleteMedia", (req, res) => {
 });
 
 app.listen(8008, () => {
-    console.log("Server is running on port 8000");
+    console.log("Server is running on port 8008");
 })
 
 

@@ -20,13 +20,7 @@
                 <button class="search-submit" type="submit"></button>
             </form>
         </div>
-        <ul class="nav-menu col-8 col-md-6">
-            <li><a href="#" class="nav-item">About</a></li>
-            <li><a href="https://trakteer.id/Vyson" class="nav-item" target="_blank" rel="noopener noreferrer">Donate</a></li>
-            <li><a href="#" class="nav-item">Services</a></li>
-            <li><a href="https://instagram.com/vysonery" class="nav-item">Social Media</a></li>
-        </ul>
-        <div class="hamburger col-2">
+        <div class="hamburger col-2 col-md-2">
             <a href="#" id="burger" class="burger ">
                 <div class="line"></div>
                 <div class="line"></div>
@@ -34,18 +28,13 @@
             </a>
         </div>
     </nav>
-    <div class="container sidebar-menu" id="sidebar-menu">
-        <h2>Menu</h2>
-        <a href="#"class="modeswitch">
-            <div class="switch" id="switch">
-                <div class="switch-circle" id="switch-circle"></div>
-            </div>
-        </a>
+    <div class="sidebar-menu" id="sidebar-menu">
+        <h2>MENU</h2>
         <ul>
-            <li class="list-unstyled"><a href="#" class="nav-item text-decoration-none text-black">Home</a></li>
-            <li class="list-unstyled"><a href="#" class="nav-item text-decoration-none text-black">About</a></li>
-            <li class="list-unstyled"><a href="#" class="nav-item text-decoration-none text-black">Services</a></li>
-            <li class="list-unstyled"><a href="#" class="nav-item text-decoration-none text-black">Contact</a></li>
+            <li class="list-unstyled"><a href="#" class="nav-item text-decoration-none text-light">Donate</a></li>
+            <li class="list-unstyled"><a href="#" class="nav-item text-decoration-none text-light">About</a></li>
+            <li class="list-unstyled"><a href="https://instagram.com/vysonery" class="nav-item text-decoration-none text-light">Social Media</a></li>
+            <li class="list-unstyled"><a href="#" class="nav-item text-decoration-none text-light">Contact</a></li>
     </div>
     <!-- ====== -->
     <br>
@@ -53,14 +42,16 @@
     <div class="container content-place">
         <div class="row justify-content-center">
             <% for (let asset of assets){%>
-            <div class="col-12 video">
+            <div class="col-12 col-md-3 video">
                 <div class="row">
-                    <video width="240" height="110" controls>
+                    <video width="240" height="135" controls>
                         <source src="<%=asset.sumber%>" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <div class="row">
-                        <h4 class="col-11"><%=asset.judul%></h4>
+                        <h4 class="col-11"><%=asset.judul%>
+                            <p class="text-start p-0 m-0"><%= (asset.size * 0.000001).toFixed(1) + " MB" %></p>
+                        </h4>
                         <div class="tripledot-container col-1">
                             <a href="#" class="tripledot">&vellip;</a>
                             <div class="video-dropdown">
@@ -72,7 +63,6 @@
                             </div>
                         </div>
                     </div>
-                        <p class="text-start p-0 m-0"><%= (asset.size * 0.000001).toFixed(1) + " MB" %></p>
                 </div>
             </div>
             <%}%>

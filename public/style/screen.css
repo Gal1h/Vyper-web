@@ -1,12 +1,12 @@
-@media screen and (min-width: 804px) {
-  .burger {
-    display: none;
-  }
-}
 
-@media screen and (max-width: 803px) {
-  .nav-menu {
-    display: none
+@media screen and (max-width: 720px) {
+  .video {
+    width: 100%;
+    height: calc((100vw * 9 / 16) + 65px);
+  }
+  video {
+    width: 80%;
+    height: calc((80vw * 9 / 16));
   }
 }
 @media screen and (max-width: 175px) {
