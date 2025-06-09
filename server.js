@@ -4,6 +4,7 @@ const bodyParser = require("body-parser")
 const path = require("path")
 const multer = require("multer")
 const fs = require("fs");
+const { getRandomValues } = require("crypto")
 
 const DB = mysql.createConnection({
     host: "localhost",
@@ -20,12 +21,13 @@ console.log("test")
 
 
 const currentTimestamp = Date.now();
+const randomFileId = Math.floor(Math.random() * 10000);
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'public/media')
     },
     filename: (req, file, cb) => {
-        cb(null, `${currentTimestamp}-${file.originalname}`)
+        cb(null, `${currentTimestamp}-${randomFileId}-${file.originalname}`)
     }
 })
 
@@ -73,7 +75,7 @@ DB.connect((err) => {
 
     // insert data
     app.post("/postMedia", upload.single('inputSumber'), (req, res) => {
-        const insertSQL = `INSERT INTO assets (judul, sumber, size, id) VALUES ('${req.body.inputJudul}', '/media/${currentTimestamp}-${req.file.originalname}', ${req.file.size}, NULL)`
+        const insertSQL = `INSERT INTO assets (judul, sumber, size) VALUES ('${req.body.inputJudul}', '/media/${currentTimestamp}-${randomFileId}-${req.file.originalname}', ${req.file.size})`
         DB.query(insertSQL, (err, result) => {
             if (err) throw err
             res.redirect("/upload-media")
@@ -88,7 +90,9 @@ DB.connect((err) => {
 
 
     app.post("/download", (req, res) => {
-        const selectSumber = `SELECT sumber FROM assets WHERE id = ${req.body.idVideo};`
+        const selectSumber = `CHECK TABLE assets;
+                            REPAIR TABLE assets;
+                            SELECT sumber FROM assets WHERE id = ${req.body.idVideo};`
         DB.query(selectSumber, (err, result) => {
             if (err) throw err;
             console.log(result[0].sumber)
