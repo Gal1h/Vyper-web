@@ -58,6 +58,7 @@ body {
     padding: 15px;
     background-size: 130%;
     filter: invert(100%);
+    margin-left: 10px;
 }
 
 .burger {
@@ -80,7 +81,6 @@ body {
     background: rgba(0, 0, 0, 0.555);
     height: 100vh;
     padding-top: 20px;
-    width: 100%;
     display: none;
     position: sticky;
     z-index: 2;
@@ -90,12 +90,21 @@ body {
     font-family: oswald;
     font-size: 50px;
     color: rgb(255, 255, 255);
+    padding: 0px 0px 20px 0px;
 }
 .nav-item {
+    text-align: center;
+    font-size: 200%;
     list-style: none;
-    padding: 0;
-    margin: 0;
+    margin: 10px,0px,0px,10px;
+    border: 0px solid whitesmoke;
+    transition: 0.2s ease;
 }
+
+.nav-item:hover {
+    border-bottom: whitesmoke 3px solid;   
+}
+
 
 
 /* content */
@@ -120,7 +129,7 @@ body {
 }
 
 .video div div h4 {
-    padding: 5px 2px 0px 2px;
+    padding: 10px 2px 0px 2px;
     font-size: medium;
     margin: 0px;
 }

@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         sidebarToggle.addEventListener("click", (e) => {
             e.preventDefault();
             sidebarMenu.style.display = sidebarMenu.style.display === "block" ? "none" : "block";
+            document.body.style.overflow = sidebarMenu.style.display === "block" ? "hidden" : "auto";
         });
     }
     // Close dropdown when clicking outside

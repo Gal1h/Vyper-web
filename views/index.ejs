@@ -16,7 +16,7 @@
         <div class="search-bar col-4 col-md-4 row">
             <a href="#" class="search-btn"></a>
             <form action="/search" method="get" class="d-flex search-form">
-                <input class="input-search form-control m-0 me-2" type="search" name="searchValue" placeholder="Search..." aria-label="Search">
+                <input class="input-search form-control m-0" type="search" name="searchValue" placeholder="Search..." aria-label="Search">
                 <button class="search-submit" type="submit"></button>
             </form>
         </div>
@@ -28,9 +28,9 @@
             </a>
         </div>
     </nav>
-    <div class="sidebar-menu" id="sidebar-menu">
+    <div class="sidebar-menu row" id="sidebar-menu">
         <h2>MENU</h2>
-        <ul>
+        <ul class="text-center container">
             <li class="list-unstyled"><a href="#" class="nav-item text-decoration-none text-light">Donate</a></li>
             <li class="list-unstyled"><a href="#" class="nav-item text-decoration-none text-light">About</a></li>
             <li class="list-unstyled"><a href="https://instagram.com/vysonery" class="nav-item text-decoration-none text-light">Social Media</a></li>
@@ -42,7 +42,7 @@
     <div class="container content-place">
         <div class="row justify-content-center">
             <% for (let asset of assets){%>
-            <div class="col-12 col-md-3 video">
+            <div class="video">
                 <div class="row">
                     <video width="240" height="135" controls>
                         <source src="<%=asset.sumber%>" type="video/mp4">
